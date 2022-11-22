@@ -1,0 +1,118 @@
+#1
+dizionario={"Giuseppe Gullo":[("corsa campestre",(40,21,0),"allievi"),("corsa 100m",(0,12,0),"Juniores mas"),("corsa 200m",(0,29,19),"Juniores mas")],"Antonia Barbera":[("corsa campestre",(0,39,11),"Juniores fem"),("corsa 100m",(0,18,0),"Juniores fem"),("corsa 200m",(0,0,0),"Juniores fem")],"Nicola Esposito":[("corsa campestre",(0,43,22),"allievi"),("corsa 100m",(0,14,0),"Juniores mas"),("corsa 200m",(0,36,19),"Juniores mas")]}
+#2
+dizionario["Simone De Riggi"]=[("corsa campestre",(1,1,0),"Juniores mas"),("corsa 100m",(0,16,24),"Juniores mas"),("corsa 200m",(0,37,12),"Juniores mas")]            
+#3
+dizionario["Giuseppe Gullo"]+=[("corsa 400m a ostacoli",(0,40,34),"Allievo")]
+dizionario["Antonia Barbera"]+=[("corsa 400m a ostacoli",(0,39,10),"Allieva")]
+dizionario["Nicola Esposito"]+=[("corsa 400m a ostacoli",(0,40,10),"Allievo")]
+dizionario["Simone De Riggi"]+=[("corsa 400m a ostacoli",(0,40,26),"Allievo")] 
+print(dizionario)    
+#4
+print(4)
+print(dizionario['Giuseppe Gullo'][0])     
+#9:37 Invernizzi
+#5
+print(5)
+print(dizionario['Nicola Esposito'][2][0])     
+print("minuti :" ,dizionario['Nicola Esposito'][2][1][0])
+print("secondi :" ,dizionario['Nicola Esposito'][2][1][1])
+print("cent :" ,dizionario['Nicola Esposito'][2][1][2])   
+print(dizionario['Nicola Esposito'][2][2])   
+#6   
+print(6)
+print(dizionario['Antonia Barbera'][1][0])     
+print("minuti :" ,dizionario['Antonia Barbera'][1][1][0])
+print("secondi :" ,dizionario['Antonia Barbera'][1][1][1])
+print("cent :" ,dizionario['Antonia Barbera'][1][1][2])  
+#9:54         
+#7  
+print(7)
+tmin=dizionario["Simone De Riggi"][1][1][1]
+tminm=0
+tminc=0
+for i in range(len(dizionario)):
+  if i==0:
+   chiave="Giuseppe Gullo"
+  elif i==1:
+   chiave="Antonia Barbera"
+  elif i==2:
+   chiave="Nicola Esposito"
+  elif i==3:
+   chiave="Simone De Riggi"
+  if dizionario[chiave][1][2]=="Juniores mas" and dizionario[chiave][1][1][1]<tmin:    
+    tminm=dizionario[chiave][1][1][0]
+    tmin=dizionario[chiave][1][1][1]
+    tminc=dizionario[chiave][1][1][2]
+print("tempo minimo minuti :" ,tminm)
+print("tempo minimo secondi :" ,tmin)
+print("tempo minimo cent :" ,tminc)  
+#8  
+print(8)
+tmaxm=0
+tmaxs=dizionario["Giuseppe Gullo"][2][1][1]
+tmaxc=0
+for i in range(len(dizionario)):
+  if i==0:
+   chiave="Giuseppe Gullo"
+  elif i==1:
+   chiave="Antonia Barbera"
+  elif i==2:
+   chiave="Nicola Esposito"
+  elif i==3:
+   chiave="Simone De Riggi"
+  if dizionario[chiave][2][2]=="Juniores mas" and dizionario[chiave][2][1][1]>tmaxs:    
+    tmaxm=dizionario[chiave][2][1][0]
+    tmaxs=dizionario[chiave][2][1][1]
+    tmaxc=dizionario[chiave][2][1][2]
+print("tempo massimo minuti :" ,tmaxm)
+print("tempo massimo secondi :" ,tmaxs)
+print("tempo massimo cent :" ,tmaxc)  
+#9
+print(9)
+totm=0
+tots=0
+totc=0
+cont=0
+for i in range(len(dizionario)):
+  if i==0:
+   chiave="Giuseppe Gullo"
+  elif i==1:
+   chiave="Antonia Barbera"
+  elif i==2:
+   chiave="Nicola Esposito"
+  elif i==3:
+   chiave="Simone De Riggi"
+  if dizionario[chiave][0][2]=="allievi":    
+    totm+=dizionario[chiave][0][1][0]
+    tots+=dizionario[chiave][0][1][1]
+    totc+=dizionario[chiave][0][1][2]
+    cont+=1
+print("media minuti :" ,totm/cont)
+print("media secondi :" ,tots/cont)
+print("media cent :" ,totc/cont)  
+#10
+def popola():
+  global nome,cognome,t1m,t1s,t1c,cat1,t2m,t2s,t2c,cat2,t3m,t3s,t3c,cat3,t4m,t4s,t4c,cat4
+  nome=input("Inserisci il nome ")
+  while len(nome)==0:
+    nome=input("Inserisci il nome ")
+  cognome=input("Inserisci il cognome ")
+  while len(cognome)==0:
+    cognome=input("Inserisci il cognome ")
+  t1m=input("Inserisci i minuti della campestre ")
+  t1s=input("Inserisci  ")
+  t1c=input("Inserisci i minuti della campestre ")
+  cat1=input("Inserisci  ")
+  t2m=input("Inserisci  ")
+  t2s=input("Inserisci  ")
+  t2c=input("Inserisci  ")
+  cat2=input("Inserisci  ")
+  t3m=input("Inserisci  ")
+  t3s=input("Inserisci  ")
+  t3c=input("Inserisci  ")
+  cat3=input("Inserisci  ")
+  t4m=input("Inserisci  ")
+  t4s=input("Inserisci  ")
+  t4c=input("Inserisci  ")
+  cat4=input("Inserisci  ")
